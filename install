@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Fetch dependencies
+if [ -d "third_party" ]; then
+    rm -r third_party
+fi
+mkdir third_party
+cd third_party
+git clone https://github.com/material-foundation/material-color-utilities.git
+git clone https://github.com/abseil/abseil-cpp.git
+cd ..
+
+# Perform initial build
+if [ -d "build" ]; then
+    rm -r build
+fi
+mkdir build
+cmake -S . -B build
+cmake --build build
+
+# Move executable to bin
+cp ./build/material-colors ~/.local/bin/material-colors
