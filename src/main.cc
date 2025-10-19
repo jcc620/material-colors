@@ -94,7 +94,7 @@ int main(int argc, char* argv[]) {
     int rgb = argb & 0xFFFFFF;
     int secondaryColorRGB = secondaryColorARGB & 0xFFFFFF;
 
-    printf("%06x\n", rgb);
+    printf("%06X\n", rgb);
     
     return 0;
 }
